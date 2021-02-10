@@ -9,7 +9,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/wizPandaDB" />
+		<property name="url" value="jdbc:mysql://localhost:3306/wizPandaDB?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true" />
 		<property name="username" value="abhinav" />
 		<property name="password" value="abhinav123" />
 	</bean>
@@ -28,6 +28,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.current_session_context_class">thread</prop>
+				   <prop key="hibernate.hbm2ddl.auto">update</prop>  
 				<prop key="hibernate.show_sql">false</prop>
 			</props>
 		</property>
