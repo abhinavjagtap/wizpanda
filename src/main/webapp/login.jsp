@@ -10,7 +10,8 @@
 <link href="css/login.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
 <link href="font/poppins/poppins.css" rel="stylesheet" />
-<link href="css/toastr.min.css" rel="stylesheet" />
+<link href="css/sweetalert.css" rel="stylesheet">
+
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
 	rel="stylesheet">
@@ -66,7 +67,7 @@
 	<script src="js/jquery-3.5.1.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-	<script src="js/toastr.min.js"></script>
+	<script src="js/sweetalert.min.js"></script>
 	<script>
 		
 
@@ -82,7 +83,48 @@
 			}
 		});
 
-		
+		var c;
+		function chekpassword() {
+			var email = $('#emailid').val();
+			var password = $('#password').val();
+
+			if (email == null || email == "" || email == undefined) {
+				swal("EmailId","Email can't be empty")
+				return false;
+			}
+
+			if (password == null || password == "" || password == undefined) {
+				swal("Password","Password can't be empty")
+				return false;
+			}
+
+			$('#loginbtn').prop('disabled', true);
+
+			$
+					.ajax({
+						url : 'login',
+						type : 'GET',
+						dataType : 'JSON',
+						data : {
+							'emailid' : email,
+							'password' : password,
+						},
+
+						success : function(res) {
+							$('#loginbtn').prop('disabled', false);
+                            console.log(res.present);
+							if(res.present == 0){
+								swal("Login","Invalid EmailId or Password");
+								return false;
+							}else{
+								window.location ="students.jsp";
+							}
+							
+
+						}
+					})
+
+		}
 
 		/*******************************************************************************
 		 * **************************** password Hide/Show*
