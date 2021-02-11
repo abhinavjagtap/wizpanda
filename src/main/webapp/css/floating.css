@@ -23,12 +23,12 @@
   font-family: 'poppinsmedium';
     font-weight: 400;
 }
-.form-control:focus{
+/* .form-control:focus{ */
 /* 	border-bottom: 1px solid #696ce4 !important; */
-}
-.form-control:focus+form-control:valid{
-	border-bottom: 1px solid #696ce4 !important;
-}
-.form-control:valid{
-	border-bottom: 1px solid #626262;
-}
+/* } */
+/* .form-control:focus+form-control:valid{ */
+/* 	border-bottom: 1px solid #696ce4 !important; */
+/* } */
+/* .form-control:valid{ */
+/* 	border-bottom: 1px solid #626262; */
+/* } */
