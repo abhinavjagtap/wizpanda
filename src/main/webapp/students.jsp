@@ -18,6 +18,7 @@
 </head>
 <body>
 	<div class="container">
+	<div class="row col-lg-12 col-md-12 mt-5" style="text-align: center;"><h1 >Welcome To Portal</h1><span style="float: right;"><a class="btn btn-primary" href="login.jsp">Logout</a></span></div>
 		<div class="row col-lg-12 col-md-12 mt-5">
 			<div class="col-lg-10 col-md-10 col-sm-12 offset-lg-1 offset-md-1 ">
 				<div class="card">
@@ -50,6 +51,48 @@
 	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
 	<script src="js/toastr.min.js"></script>
 	<script>
+		
+	$(document).ready(function() {
+		getStudent();
+	});
+	
+		function getStudent() {
+			
+
+			$.ajax({
+						url : 'students',
+						type : 'GET',
+						dataType : 'JSON',
+						data : {},
+						success : function(res) {
+                            
+							$('#studentBody').empty();
+							if(res == null || res == ""){
+								
+							}else{
+								$.each(res, function(index, data) {
+										var tr = $('<tr id=' + data.id	+ '>');
+											$('<td>'+ data.id+ '</td>')
+													.appendTo(tr);
+
+											$('<td>'+ data.name+ '</td>')
+													.appendTo(tr);
+											$(	'<td>'+ data.emailid
+													+ '</td>').appendTo(tr);
+											$('<td>'	+ data.mobileno + '</td>')
+													.appendTo(tr);
+											
+											$("#studentBody").append(tr);
+
+										});
+							}
+							
+
+						}
+					})
+
+		}
+
 		
 	</script>
 </body>
