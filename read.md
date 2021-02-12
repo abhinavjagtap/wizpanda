@@ -9,19 +9,19 @@ This Project shows the list of Students which are stored in the MySql Database. 
 
 
 ## Tools used
-Java - 1.8
-Spring Boot - 3.9.9
-SQLyogCommunity database - 12.5.3.0
-Eclipse IDE - 2018-12
+- Java - 1.8
+- Spring Boot - 3.9.9
+- SQLyogCommunity database - 12.5.3.0
+- Eclipse IDE - 2018-12
 
 ## Libraries used
-mysql-connector-java - 5.1.49
-hibernate-entitymanager
-hibernate-core
-spring-boot-starter-tomcat
+- mysql-connector-java - 5.1.49
+- hibernate-entitymanager
+- hibernate-core
+- spring-boot-starter-tomcat
 
 
-##External JS AND CSS.
+## External JS AND CSS.
 - Sweet Alert.
 - Bootstrap v5.0.0-beta1.
 - Floating labels.
